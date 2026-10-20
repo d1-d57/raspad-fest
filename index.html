@@ -13,117 +13,106 @@
 <link href="https://fonts.googleapis.com/css2?family=Neucha&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0a08; --fg:#d9d3c5; --dim:#958c7b; --line:#4a4235;
+  --bg:#0b0a08; --fg:#d9d3c5; --dim:#8f8676; --line:#2e2922;
   --rust:#c9662f; --moss:#93a385;
   --hand:'Neucha',cursive; --text:'PT Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--bg)}
-body{background:var(--bg);color:var(--fg);font:15px/1.4 var(--text);-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--fg);font:17px/1.45 var(--text);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
 a:hover{color:var(--rust);border-color:var(--rust)}
 
-.wrap{display:grid;grid-template-columns:1fr;max-width:1400px;margin:0 auto}
 .poster img{display:block;width:100%;height:auto}
-.info{padding:20px 16px 32px}
+.info{padding:24px 16px 40px}
 
-h2{font:400 1.25rem/1 var(--hand);color:var(--rust);letter-spacing:.04em;margin:20px 0 8px}
-.hand{font-family:var(--hand)}
+.when{font:400 1.7rem/1.15 var(--hand)}
+.age{margin-left:.4em;color:var(--dim);font-size:.75em}
+.where{display:inline-block;margin-top:6px;color:var(--dim);border:0}
+.where:hover{color:var(--rust)}
 
-.facts{font:400 1.35rem/1.25 var(--hand)}
-.facts .addr{font:.95rem/1.4 var(--text);color:var(--dim);margin-top:4px}
-.age{display:inline-block;margin-left:8px;padding:1px 7px;border:1px solid var(--dim);border-radius:3px;font:.8rem var(--text);color:var(--dim);vertical-align:middle}
+.buy{display:block;margin:22px 0 8px;padding:14px;text-align:center;background:var(--rust);color:var(--bg);border:0;border-radius:4px;font:400 1.5rem/1 var(--hand);letter-spacing:.04em}
+.buy:hover{background:#e07a40;color:var(--bg)}
+.price{font-size:.85rem;color:var(--dim)}
 
-.buy{display:block;margin:18px 0 8px;padding:14px;text-align:center;background:var(--rust);color:#0b0a08;border:0;border-radius:4px;font:400 1.4rem/1 var(--hand);letter-spacing:.05em}
-.buy:hover{background:#e07a40;color:#0b0a08}
-.price{font-size:.9rem;color:var(--dim)}
-.price b{color:var(--fg)}
+h2{font:400 1.35rem/1 var(--hand);color:var(--rust);margin:40px 0 10px}
 
-table{width:100%;border-collapse:collapse;font:400 1.05rem/1.2 var(--hand)}
-th,td{padding:7px 6px 7px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{font-weight:400;font-size:1rem}
+table{width:100%;border-collapse:collapse;margin-top:40px;font:400 1.15rem/1.2 var(--hand)}
+th,td{padding:10px 12px 10px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:400;color:var(--dim)}
 th.z1{color:var(--rust)} th.z2{color:var(--moss)}
-td:first-child{color:var(--dim);white-space:nowrap;width:1%;padding-right:14px}
-.note{font-size:.85rem;color:var(--dim);margin-top:8px}
+td:first-child{color:var(--dim);width:1%;white-space:nowrap;padding-right:18px}
+td small{display:block;margin-top:3px;font:.8rem var(--text);color:var(--dim)}
+td small a{border:0}
+.note{margin-top:10px;font-size:.85rem;color:var(--dim)}
 
-details{border-bottom:1px solid var(--line);padding:8px 0}
-summary{cursor:pointer;list-style:none}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:12px 0}
 summary::-webkit-details-marker{display:none}
-summary .t{font-weight:700;display:block}
-summary .who{font-size:.85rem;color:var(--dim);display:block}
-summary .t::after{content:" +";color:var(--rust);font-weight:400}
-details[open] summary .t::after{content:" −"}
-details p{margin-top:6px;font-size:.92rem;color:#bdb6a6}
+summary b{display:block;font-weight:700}
+summary span{color:var(--dim);font-size:.9rem}
+summary b::after{content:" +";color:var(--rust);font-weight:400}
+details[open] summary b::after{content:" −"}
+details .who{font-size:.85rem;color:var(--dim);font-style:italic}
+details p{padding-bottom:14px;color:#bdb6a6}
+details .who+p{margin-top:6px}
 
-.lineup{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}
-.lineup h2{margin-top:16px}
-.lineup ul{list-style:none}
-.lineup li{padding:1px 0}
-.lineup .sub{color:var(--dim);font-size:.85rem}
-.host{margin-top:12px}
+.lineup{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.lineup ul{list-style:none;font:400 1.15rem/1.6 var(--hand)}
 
-footer{margin-top:14px;padding-top:10px;border-top:1px solid var(--line);font-size:.9rem;color:var(--dim)}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-size:.85rem;color:var(--dim)}
 footer a{color:var(--fg)}
 
-@media (min-width:860px){
-  .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);height:100vh;height:100dvh}
-  .poster{display:flex;align-items:center;justify-content:center;padding:24px;height:100%}
-  .poster img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
-  .info{height:100%;overflow-y:auto;padding:28px 32px 28px 8px}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
-  .lineup{grid-template-columns:1fr 1fr 1fr}
+@media (min-width:900px){
+  main{display:grid;grid-template-columns:1fr 1fr;height:100vh;height:100dvh}
+  .poster{display:flex;align-items:center;justify-content:center;padding:32px;height:100%}
+  .poster img{max-height:100%;width:auto;max-width:100%}
+  .info{height:100%;overflow-y:auto;padding:48px 48px 48px 16px}
 }
-@media (min-width:1200px){ body{font-size:15.5px} }
+@media (min-width:1400px){ body{font-size:19px} .info{padding:64px 80px 64px 24px} }
 </style>
 </head>
 <body>
-<main class="wrap">
+<main>
   <div class="poster"><img src="poster.jpg" alt="РАСПАД — фестиваль об эстетике смерти и увядания. КЦ «Угол», 1 ноября, 17:30" width="1200" height="1200"></div>
 
   <div class="info">
-    <div class="facts">
-      1 ноября, 17:30–00:00 <span class="age">18+</span><br>
-      КЦ «Угол»
-      <div class="addr"><a href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%2C%2029%D1%815" target="_blank" rel="noopener">м. Бауманская, Новорязанская ул., 29с5</a></div>
-    </div>
+    <p class="when">1 ноября · 17:30–00:00<span class="age">18+</span></p>
+    <a class="where" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%2C%2029%D1%815" target="_blank" rel="noopener">КЦ «Угол» · Новорязанская,&nbsp;29с5 · м.&nbsp;Бауманская&nbsp;↗</a>
 
-    <a class="buy" href="https://monodromy.timepad.ru/event/4256290/" target="_blank" rel="noopener">Билеты</a>
-    <div class="price">Цена: <b>500 р.</b> · первые 10 билетов по <b>350 р.</b> · в день мероприятия <b>700 р.</b></div>
+    <a class="buy" href="https://monodromy.timepad.ru/event/4256290/" target="_blank" rel="noopener">Билеты · 500 ₽</a>
+    <p class="price">первые 10 — 350 ₽ · в день фестиваля — 700 ₽</p>
 
-    <div class="cols">
-      <section>
-        <h2>Расписание</h2>
-        <table>
-          <tr><th></th><th class="z1">Зал 1</th><th class="z2">Зал 2</th></tr>
-          <tr><td>17:30–19:15</td><td>Лекции</td><td>Калейдоскопы</td></tr>
-          <tr><td>19:15–20:00</td><td>Лекции</td><td>Психологическая практика</td></tr>
-          <tr><td>20:00–21:00</td><td>Театральные практики</td><td>Стихи</td></tr>
-          <tr><td>21:00–22:30</td><td>Музыка</td><td>Death cafe</td></tr>
-          <tr><td>22:30–00:00</td><td>Музыка</td><td>Пахаванне дзеда</td></tr>
-        </table>
-        <p class="note">Также в зале 2 будет коллажный стол и зона для макияжа. В случае хорошей погоды театральные практики вынесем на улицу.</p>
-      </section>
+    <table>
+      <tr><th></th><th class="z1">Зал 1</th><th class="z2">Зал 2</th></tr>
+      <tr><td>17:30</td><td rowspan="2"><a href="#lekcii">Лекции</a></td><td>Калейдоскопы<small><a href="https://t.me/biobydni" target="_blank" rel="noopener">Ася Тайга</a></small></td></tr>
+      <tr><td>19:15</td><td>Психологическая практика<small><a href="https://t.me/smert_v_pereplete" target="_blank" rel="noopener">Наталья Жесткова</a></small></td></tr>
+      <tr><td>20:00</td><td>Театральные практики<small>Йеня</small></td><td><a href="#stihi">Стихи</a></td></tr>
+      <tr><td>21:00</td><td rowspan="2"><a href="#muzyka">Музыка</a></td><td>Death Cafe<small><a href="https://t.me/IKIGAIPSY" target="_blank" rel="noopener">Константин Филиппов</a></small></td></tr>
+      <tr><td>22:30</td><td>Пахаванне дзеда</td></tr>
+    </table>
+    <p class="note">В зале 2 ещё коллажный стол (<a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a>) и зона для макияжа. В хорошую погоду театральные практики — на улице.</p>
 
-      <section>
-        <h2>Лекции</h2>
-        <details>
-          <summary><span class="t">Жили-были, так и померли: о культе смерти в славянском фольклоре</span><span class="who">Григорий Бушуев, социальный исследователь, куратор культурных проектов, экскурсовод</span></summary>
-          <p>Почему Снегурочку не выпускают играть на Ивана-Купала? Почему Баба-Яга живёт в избушке на курьей ножке? Почему смерть Кощея спрятана так далеко: в игле, в яйце, в утке, в зайце и в сундуке? Почему растрёпанную девушку принимали за навку и бежали прочь? Для кого изначально рассказывались сказки и почему смерть то и дело оказывается в самом центре славянского фольклора?</p>
-        </details>
-        <details>
-          <summary><span class="t">Камбоджа и заложные покойницы</span><span class="who">Анна Григорьева, студентка восточного факультета СПбГУ, лаборант в Кунсткамере (отдел АОИ)</span></summary>
-          <p>Почему трупная жидкость считается волшебной? Как связаны медиумизм и насилие? И почему эмбрион обладает такой магической мощью, что мужчина готов вырвать его из материнского тела (буквально), дабы присвоить себе и сделать своим «ребенком»? Все эти (и многие другие вопросы) мы обсудим на лекции.</p>
-        </details>
-        <details>
-          <summary><span class="t">Мозг на пороге: что происходит, когда мы умираем</span><span class="who"><a href="https://t.me/yamppsy" target="_blank" rel="noopener">Антон Ямпольский</a>, клинический психолог, сотрудник Института Когнитивных Нейронаук ВШЭ</span></summary>
-          <p>Что видит мозг, когда сердце уже остановилось? Почему у части «безнадёжных» пациентов в реанимации сознание сохраняется, хотя снаружи они не подают ни единого признака жизни? Откуда берутся ярчайшие «воспоминания о смерти» у некоторых переживших остановку сердца? И правда ли, что умирающий мозг на какое-то время не затихает, а, наоборот, вспыхивает?</p>
-        </details>
-      </section>
-    </div>
+    <h2 id="lekcii">Лекции</h2>
+    <details>
+      <summary><b>Жили-были, так и померли: о культе смерти в славянском фольклоре</b><span>Григорий Бушуев</span></summary>
+      <p class="who">Социальный исследователь, куратор культурных проектов, экскурсовод</p>
+      <p>Почему Снегурочку не выпускают играть на Ивана-Купала? Почему Баба-Яга живёт в избушке на курьей ножке? Почему смерть Кощея спрятана так далеко: в игле, в яйце, в утке, в зайце и в сундуке? Почему растрёпанную девушку принимали за навку и бежали прочь? Для кого изначально рассказывались сказки и почему смерть то и дело оказывается в самом центре славянского фольклора?</p>
+    </details>
+    <details>
+      <summary><b>Камбоджа и заложные покойницы</b><span>Анна Григорьева</span></summary>
+      <p class="who">Студентка восточного факультета СПбГУ, лаборант в Кунсткамере (отдел АОИ)</p>
+      <p>Почему трупная жидкость считается волшебной? Как связаны медиумизм и насилие? И почему эмбрион обладает такой магической мощью, что мужчина готов вырвать его из материнского тела (буквально), дабы присвоить себе и сделать своим «ребенком»? Все эти (и многие другие вопросы) мы обсудим на лекции.</p>
+    </details>
+    <details>
+      <summary><b>Мозг на пороге: что происходит, когда мы умираем</b><span>Антон Ямпольский</span></summary>
+      <p class="who"><a href="https://t.me/yamppsy" target="_blank" rel="noopener">Клинический психолог</a>, сотрудник Института Когнитивных Нейронаук ВШЭ</p>
+      <p>Что видит мозг, когда сердце уже остановилось? Почему у части «безнадёжных» пациентов в реанимации сознание сохраняется, хотя снаружи они не подают ни единого признака жизни? Откуда берутся ярчайшие «воспоминания о смерти» у некоторых переживших остановку сердца? И правда ли, что умирающий мозг на какое-то время не затихает, а, наоборот, вспыхивает?</p>
+    </details>
 
     <div class="lineup">
       <section>
-        <h2>Стихи</h2>
+        <h2 id="stihi">Стихи</h2>
         <ul>
           <li>Алексей Михайлов</li>
           <li>Ольга Учуськина</li>
@@ -133,7 +122,7 @@ footer a{color:var(--fg)}
         </ul>
       </section>
       <section>
-        <h2>Музыка</h2>
+        <h2 id="muzyka">Музыка</h2>
         <ul>
           <li><a href="https://t.me/domavseband" target="_blank" rel="noopener">doma vse</a></li>
           <li><a href="https://rethfeles.bandcamp.com/" target="_blank" rel="noopener">Лиза Ретфелес</a></li>
@@ -143,22 +132,10 @@ footer a{color:var(--fg)}
           <li><a href="https://t.me/slavianskii_channel" target="_blank" rel="noopener">Контр</a></li>
         </ul>
       </section>
-      <section>
-        <h2>Активности</h2>
-        <ul>
-          <li>калейдоскопы <span class="sub">(<a href="https://t.me/biobydni" target="_blank" rel="noopener">Ася Тайга</a>)</span></li>
-          <li>психологическая практика <span class="sub">(<a href="https://t.me/smert_v_pereplete" target="_blank" rel="noopener">Наталья Жесткова</a>)</span></li>
-          <li>коллажи <span class="sub">(<a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a>)</span></li>
-          <li>театральные практики <span class="sub">(Йеня)</span></li>
-          <li>Death Cafe <span class="sub">(<a href="https://t.me/IKIGAIPSY" target="_blank" rel="noopener">Константин Филиппов</a>)</span></li>
-        </ul>
-      </section>
     </div>
 
-    <p class="host"><span class="hand" style="color:var(--rust)">Ведущий:</span> <a href="https://t.me/turings_crossword" target="_blank" rel="noopener">Ваня Яковлев</a></p>
-
     <footer>
-      Следите за анонсами в каналах <a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a> и <a href="https://t.me/jerryrubinclub" target="_blank" rel="noopener">клуб Джерри Рубина</a>
+      Ведущий — <a href="https://t.me/turings_crossword" target="_blank" rel="noopener">Ваня Яковлев</a> · анонсы: <a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a>, <a href="https://t.me/jerryrubinclub" target="_blank" rel="noopener">клуб Джерри Рубина</a>
     </footer>
   </div>
 </main>
