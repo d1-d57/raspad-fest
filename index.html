@@ -26,8 +26,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--bg)}
 body{background:var(--bg);color:var(--fg);font:17px/1.45 var(--text);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
-a:hover{color:var(--rust);border-color:var(--rust)}
+a{color:#e39a6c;text-decoration:underline;text-decoration-color:rgba(201,102,47,.55);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--rust);text-decoration-color:var(--rust)}
 :focus-visible{outline:1px solid var(--rust);outline-offset:3px}
 ::selection{background:var(--rust);color:var(--bg)}
 html,.info{scroll-behavior:smooth}
@@ -38,10 +38,10 @@ html,.info{scroll-behavior:smooth}
 
 .when{font:400 1.7rem/1.15 var(--hand)}
 .age{margin-left:.4em;color:var(--dim);font-size:.75em}
-.where{display:inline-block;margin-top:6px;color:var(--dim);border:0}
-.where:hover{color:var(--rust)}
+.where{display:inline-block;margin-top:6px}
+.warm{margin-top:10px;padding:8px 12px;border-left:2px solid var(--rust);background:#17130f;font-size:.95rem}
 
-.buy{display:block;margin:22px 0 8px;padding:14px;text-align:center;background:var(--rust);color:var(--bg);border:0;border-radius:4px;font:400 1.5rem/1 var(--hand);letter-spacing:.04em}
+.buy{display:block;text-decoration:none;margin:22px 0 8px;padding:14px;text-align:center;background:var(--rust);color:var(--bg);border:0;border-radius:4px;font:400 1.5rem/1 var(--hand);letter-spacing:.04em}
 .buy:hover{background:#e07a40;color:var(--bg)}
 .price{font-size:.85rem;color:var(--dim)}
 
@@ -54,18 +54,17 @@ th.z1{color:var(--rust)} th.z2{color:var(--moss)}
 td:first-child{color:var(--dim);width:1%;white-space:nowrap;padding-right:18px}
 th:first-child,td:first-child{border-bottom:0}
 td[rowspan]{vertical-align:middle}
-td>a{border:0}
 td small{display:block;margin-top:3px;font:.8rem var(--text);color:var(--dim)}
-td small a{border:0}
 .note{margin-top:10px;font-size:.85rem;color:var(--dim)}
 
 details{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;list-style:none;padding:12px 0}
 summary::-webkit-details-marker{display:none}
 summary b{display:block;font-weight:700}
-summary span{color:var(--dim);font-size:.9rem}
-summary b::after{content:" +";color:var(--rust);font-weight:400}
-details[open] summary b::after{content:" −"}
+summary span{display:block;color:var(--dim);font-size:.9rem}
+summary::after{content:"читать анонс ↓";display:inline-block;margin-top:8px;padding:4px 12px;border:1px solid var(--rust);border-radius:999px;color:var(--rust);font:400 .95rem/1.2 var(--hand)}
+summary:hover::after{background:var(--rust);color:var(--bg)}
+details[open] summary::after{content:"свернуть ↑"}
 details .who{font-size:.85rem;color:var(--dim);font-style:italic}
 details p{padding-bottom:14px;color:#bdb6a6}
 details .who+p{margin-top:6px}
@@ -93,16 +92,17 @@ footer a{color:var(--fg)}
   <div class="info">
     <p class="when">1 ноября · 17:30–00:00<span class="age">18+</span></p>
     <a class="where" href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%80%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%2C%2029%D1%815" target="_blank" rel="noopener">КЦ «Угол» · Новорязанская,&nbsp;29с5 · м.&nbsp;Бауманская&nbsp;↗</a>
+    <p class="warm">❗Одевайтесь теплее! В одной из зон может быть прохладно!</p>
 
     <a class="buy" href="https://monodromy.timepad.ru/event/4256290/" target="_blank" rel="noopener">Билеты · 500 ₽</a>
     <p class="price">первые 10 — 350 ₽ · в день фестиваля — 700 ₽</p>
 
     <table>
       <tr><th></th><th class="z1">Зал 1</th><th class="z2">Зал 2</th></tr>
-      <tr><td>17:30</td><td rowspan="2"><a href="#lekcii">Лекции</a></td><td>Калейдоскопы<small><a href="https://t.me/biobydni" target="_blank" rel="noopener">Ася Тайга</a></small></td></tr>
-      <tr><td>19:15</td><td>Психологическая практика<small><a href="https://t.me/smert_v_pereplete" target="_blank" rel="noopener">Наталья Жесткова</a></small></td></tr>
-      <tr><td>20:00</td><td>Театральные практики<small>Йеня</small></td><td><a href="#stihi">Стихи</a></td></tr>
-      <tr><td>21:00</td><td rowspan="2"><a href="#muzyka">Музыка</a></td><td>Death Cafe<small><a href="https://t.me/IKIGAIPSY" target="_blank" rel="noopener">Константин Филиппов</a></small></td></tr>
+      <tr><td>17:30</td><td rowspan="2"><a href="#lekcii">Лекции</a></td><td><a href="#kaleidoskopy">Калейдоскопы</a></td></tr>
+      <tr><td>18:45</td><td><a href="#psihologiya">Психологическая практика</a></td></tr>
+      <tr><td>20:00</td><td><a href="#stihi">Стихи</a></td><td>Театральные практики<small>Йеня</small></td></tr>
+      <tr><td>21:00</td><td rowspan="2"><a href="#muzyka">Музыка</a></td><td><a href="#deathcafe">Death Cafe</a></td></tr>
       <tr><td>22:30</td><td>Пахаванне дзеда</td></tr>
     </table>
     <p class="note">Ещё в зале 2 — коллажи (<a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a>) и макияж. Театр в хорошую погоду — на улице.</p>
@@ -123,6 +123,23 @@ footer a{color:var(--fg)}
       <p class="who"><a href="https://t.me/yamppsy" target="_blank" rel="noopener">Клинический психолог</a>, сотрудник Института Когнитивных Нейронаук ВШЭ</p>
       <p>Что видит мозг, когда сердце уже остановилось? Почему у части «безнадёжных» пациентов в реанимации сознание сохраняется, хотя снаружи они не подают ни единого признака жизни? Откуда берутся ярчайшие «воспоминания о смерти» у некоторых переживших остановку сердца? И правда ли, что умирающий мозг на какое-то время не затихает, а, наоборот, вспыхивает?</p>
     </details>
+
+    <h2 id="aktivnosti">Активности</h2>
+    <details id="kaleidoskopy">
+      <summary><b>Калейдоскопы</b><span><a href="https://t.me/biobydni" target="_blank" rel="noopener">Ася Тайга</a> · зал 2, 17:30</span></summary>
+      <p>Соберём калейдоскопы и засыплем внутрь сухой мох, осколки, обрезки, мусор, тёмный бисер по вашему выбору. Каждый соберёт свой узор распада.</p>
+    </details>
+    <details id="psihologiya">
+      <summary><b>Психологическая практика</b><span><a href="https://t.me/smert_v_pereplete" target="_blank" rel="noopener">Наталья Жесткова</a> · зал 2, 18:45</span></summary>
+      <p>Самоисследование соприкосновения с темой смерти в жизни. Информация от психолога о горевании, блок вопросов/ответов.</p>
+    </details>
+    <details id="deathcafe">
+      <summary><b>Death Cafe</b><span><a href="https://t.me/IKIGAIPSY" target="_blank" rel="noopener">Константин Филиппов</a> · зал 2, 21:00</span></summary>
+      <p>Death Cafe — формат встреч, где незнакомые люди собираются за чашкой чая, чтобы открыто поговорить о смерти и жизни.</p>
+      <p>Здесь нет лекций, заранее заданных тем и правильных ответов. О чём пойдёт разговор, решают сами участники. Можно делиться личными историями, размышлениями, страхами, задавать вопросы, шутить или просто слушать других.</p>
+      <p>Мы можем говорить о конечности жизни, о потерях, неизвестности, страхе смерти, о том, что остаётся после нас, и о том, как осознание собственной смертности влияет на наши желания, выбор и отношение к жизни.</p>
+    </details>
+    <p class="note">Ещё: театральные практики (Йеня, зал 2, 20:00), коллажи (<a href="https://t.me/monodromy_meow" target="_blank" rel="noopener">monodromy</a>), зона для макияжа.</p>
 
     <div class="lineup">
       <section>
